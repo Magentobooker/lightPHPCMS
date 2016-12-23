@@ -1,4 +1,4 @@
 <?php
 
 // Version
-define('VERSION', '0.9.3');
+define('VERSION', '0.1.0');
