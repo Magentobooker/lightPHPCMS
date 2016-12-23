@@ -1,3 +1,4 @@
+/system/cache/*
 /system/logs/error.log
 /config.php
 /admin/config.php
