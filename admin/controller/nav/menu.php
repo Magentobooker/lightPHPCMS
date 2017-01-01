@@ -423,11 +423,10 @@ class ControllerNavMenu extends Controller {
 			if ((utf8_strlen($value['name']) < 2) || (utf8_strlen($value['name']) > 32)) {
 				$this->error['name'][$language_id] = $this->language->get('error_name');
 			}
-
 			
 		}
 
-		if ((utf8_strlen($this->request->post['url']) < 2) || (utf8_strlen($this->request->post['url']) > 128)) {
+		if ((utf8_strlen($this->request->post['url']) < 1) || (utf8_strlen($this->request->post['url']) > 128)) {
 			$this->error['url'] = $this->language->get('error_url');
 		}
 

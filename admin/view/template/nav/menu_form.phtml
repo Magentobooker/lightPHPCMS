@@ -58,6 +58,9 @@
 					<label class="col-sm-2 control-label" for="input-url"><?php echo $entry_url; ?></label>
 					<div class="col-sm-10">
 						<input type="text" name="url" value="<?php echo $url; ?>" placeholder="<?php echo $entry_url; ?>" id="input-url" class="form-control" />
+						<?php if ($error_url) { ?>
+						<div class="text-danger"><?php echo $error_url; ?></div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="form-group">
@@ -121,35 +124,7 @@ $('input[name=\'path\']').autocomplete({
 });
 </script> 
 <script>
-$('input[name=\'filter\']').autocomplete({
-	'source': function(request, response) {
-		$.ajax({
-			url: 'index.php?route=catalog/filter/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
-			dataType: 'json',
-			success: function(json) {
-				response($.map(json, function(item) {
-					return {
-						label: item['name'],
-						value: item['filter_id']
-					}
-				}));
-			}
-		});
-	},
-	'select': function(item) {
-		$('input[name=\'filter\']').val('');
-
-		$('#category-filter' + item['value']).remove();
-
-		$('#category-filter').append('<div id="category-filter' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="category_filter[]" value="' + item['value'] + '" /></div>');
-	}
-});
-
-$('#category-filter').delegate('.fa-minus-circle', 'click', function() {
-	$(this).parent().remove();
-});
-</script> 
-<script>
 $('#language a:first').tab('show');
-</script></div>
+</script>
+</div>
 <?php echo $footer; ?>

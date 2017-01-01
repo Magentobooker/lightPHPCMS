@@ -26,4 +26,4 @@ $_['entry_status']				= 'Status';
 $_['error_warning']				= 'Warning: Please check the form carefully for errors!';
 $_['error_permission']			= 'Warning: You do not have permission to modify navs!';
 $_['error_name']				= 'Nav Name must be between 2 and 32 characters!';
-$_['error_url']					= 'Nav URL must be between 2 and 128 characters!';
+$_['error_url']					= 'Nav URL must be between 1 and 128 characters!';
